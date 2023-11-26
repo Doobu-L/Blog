@@ -8,15 +8,21 @@ import feign.codec.ErrorDecoder;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 
+import java.io.IOException;
+
 @RequiredArgsConstructor
 public class KakaoErrorDecoder implements ErrorDecoder {
 
     private final ObjectMapper objectMapper;
 
-    @SneakyThrows
     @Override
-    public Exception decode(String methodKey, Response response) {
-        KakaoErrorResponse kakaoError = objectMapper.readValue(response.body().asInputStream(), KakaoErrorResponse.class);
+    public KakaoBlogException decode(String methodKey, Response response) {
+        KakaoErrorResponse kakaoError = null;
+        try {
+            kakaoError = objectMapper.readValue(response.body().asInputStream(), KakaoErrorResponse.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return new KakaoBlogException(response.status(),kakaoError);
     }
 }

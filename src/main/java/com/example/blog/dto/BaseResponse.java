@@ -7,6 +7,6 @@ import org.springframework.http.HttpStatusCode;
 @RequiredArgsConstructor
 public class BaseResponse {
     private final HttpStatus status;
-    private final Throwable error;
+    private final String message;
 
 }

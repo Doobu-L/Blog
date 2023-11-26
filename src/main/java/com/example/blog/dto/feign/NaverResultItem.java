@@ -2,21 +2,23 @@ package com.example.blog.dto.feign;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NaverResultItem {
     @JsonProperty("title")
-    String title;
+    private final String title;
     @JsonProperty("link")
-    String url;
+    private final String url;
     @JsonProperty("description")
-    String description;
+    private final String description;
     @JsonProperty("bloggername")
-    String bloggerName;
+    private final String bloggerName;
     @JsonProperty("bloggerlink")
-    String bloggerLink;
+    private final String bloggerLink;
     @JsonProperty("postdate")
-    String postDate;
+    private final String postDate;
 }

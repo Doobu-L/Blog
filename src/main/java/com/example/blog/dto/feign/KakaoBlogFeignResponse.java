@@ -2,6 +2,7 @@ package com.example.blog.dto.feign;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -12,20 +13,21 @@ import java.util.List;
 public class KakaoBlogFeignResponse {
 
     @JsonProperty("meta")
-    Meta meta;
+    private final Meta meta;
     @JsonProperty("documents")
-    List<KakaoResultItem> items;
+    private final List<KakaoResultItem> items;
 
     @Getter
+    @RequiredArgsConstructor
     public static class Meta {
         @JsonProperty("total_count")
-        private int totalCount;
+        private final int totalCount;
 
         @JsonProperty("pageable_count")
-        private int pageableCount;
+        private final int pageableCount;
 
         @JsonProperty("is_end")
-        private boolean isEnd;
+        private final boolean isEnd;
 
     }
 }

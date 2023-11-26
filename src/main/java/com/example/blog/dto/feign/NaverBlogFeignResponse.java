@@ -1,20 +1,21 @@
 package com.example.blog.dto.feign;
 
-import com.example.blog.domain.SearchResultItem;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
 
 @Getter
+@AllArgsConstructor
 public class NaverBlogFeignResponse {
     @JsonProperty("total")
-    private Integer total;
+    private final Integer total;
     @JsonProperty("start")
-    private Integer start;
+    private final Integer start;
     @JsonProperty("display")
-    private Integer display;
+    private final Integer display;
 
     @JsonProperty("items")
-    private List<NaverResultItem> items;
+    private final List<NaverResultItem> items;
 }
