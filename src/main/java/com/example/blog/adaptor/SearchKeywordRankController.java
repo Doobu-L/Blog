@@ -1,11 +1,13 @@
-package com.example.blog.controller;
+package com.example.blog.adaptor;
 
-import com.example.blog.service.SearchKeywordService;
+import com.example.blog.domain.SearchKeywordService;
+import com.example.blog.dto.SearchKeywordResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,7 +17,7 @@ public class SearchKeywordRankController {
     private final SearchKeywordService searchKeywordService;
 
     @GetMapping("/top10")
-    public ResponseEntity getTop10Keyword(){
-        return ResponseEntity.ok(searchKeywordService.getTop10());
+    public List<SearchKeywordResponse> getTop10Keyword() {
+        return searchKeywordService.getTop10();
     }
 }

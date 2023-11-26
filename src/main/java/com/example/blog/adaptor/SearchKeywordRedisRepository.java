@@ -1,5 +1,6 @@
-package com.example.blog.repository;
+package com.example.blog.adaptor;
 
+import com.example.blog.port.SearchKeywordRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
@@ -10,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 @RequiredArgsConstructor
 @Repository
-public class SearchKeywordRedisRepository {
+public class SearchKeywordRedisRepository implements SearchKeywordRepository {
 
     private static final long EXPIRATION_TIME_IN_MINUTES = 60;
 

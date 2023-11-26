@@ -1,0 +1,8 @@
+### GET blog search results
+GET http://localhost:8080/api/blogs/search?query=test1111&page=1&size=10&sort=ACCURACY
+Accept: application/json
+
+### GET search keyword rank
+GET http://localhost:8080/api/keywords/top10
+Accept: application/json
+

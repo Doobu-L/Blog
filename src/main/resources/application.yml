@@ -41,7 +41,7 @@ logging:
 third-part:
   kakao:
     url: https://dapi.kakao.com
-    rest-api-key: cab19972479efc884e0693ea099ddfa3 1
+    rest-api-key: cab19972479efc884e0693ea099ddfa3
   naver:
     url: https://openapi.naver.com
     client-id: uKxXk967izRzFiCOWrjz

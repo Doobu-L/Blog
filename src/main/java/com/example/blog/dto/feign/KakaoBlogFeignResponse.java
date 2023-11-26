@@ -2,18 +2,19 @@ package com.example.blog.dto.feign;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 
 @Getter
-public class KakaoBlogFeignResponse extends BlogFeignResponse {
+@RequiredArgsConstructor
+public class KakaoBlogFeignResponse {
 
     @JsonProperty("meta")
-    private Meta meta;
-
+    Meta meta;
     @JsonProperty("documents")
-    private List<KakaoBlogItem> items;
+    List<KakaoResultItem> items;
 
     @Getter
     public static class Meta {
