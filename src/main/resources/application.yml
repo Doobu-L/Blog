@@ -27,10 +27,22 @@ spring:
   data:
     redis:
       host: 127.0.0.1
-      port: 6379
+      port: 6380
+      database: 0
+      url: redis://127.0.0.1:6380/0
   main:
     allow-bean-definition-overriding: true
 logging:
   level:
+    com.example.blog.feignclient.KakaoBlogClient: debug
+    com.example.blog.feignclient.NaverBlogClient: debug
     org.hibernate.SQL: debug
 
+third-part:
+  kakao:
+    url: https://dapi.kakao.com
+    rest-api-key: cab19972479efc884e0693ea099ddfa3 1
+  naver:
+    url: https://openapi.naver.com
+    client-id: uKxXk967izRzFiCOWrjz
+    secret-key: T437pV4615
